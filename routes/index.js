@@ -7,7 +7,7 @@ const axios = require('axios');
 router.get('/', function(req, res){
   axios({
     method: 'get',
-    url: 'https://youtube.googleapis.com/youtube/v3/search?part=snippet&order=date&q=website&key=AIzaSyBTpU6op2p3sak-GATeCHGL3ORgwaJ_oAg',
+    url: 'https://youtube.googleapis.com/youtube/v3/search?part=snippet&order=date&q=website&key=AIzaSyBwrkYvURgBBaFY2XCM9xIF7iQ_qUOGxxs',
   }).then(function (response) {
     const videoData = new videoSchema({
       videoData: response.data.items
