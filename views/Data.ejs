@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="../stylesheets/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+  <title>Document</title>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <div id="back">
+    <% a.map(function(x){ %>
+      <div id="card">
+        <h2><span>Published At:</span> <b><%= x.snippet.publishedAt %></b></h2> <br>
+        <h2><span>Videon id:</span> <b><%= x.id.videoId %></b></h2> <br>
+        <h3><span>Video Title :</span> <b><%= x.snippet.title %></b></h3> <br>
+        <h3><span>Video Description:</span> <%= x.snippet.description %></h3> <br>
+        <br>
+        <div id="thumbnails">
+          <h2>Thumbnails</h2><br>
+          <h5><span>Default:</span> <a target="_blank" href="<%= x.snippet.thumbnails.default.url %>"><%= x.snippet.thumbnails.default.url %></a></h5> <br>
+          <h5><span>Medium Quality:</span> <a target="_blank" href="<%= x.snippet.thumbnails.medium.url %>"><%= x.snippet.thumbnails.medium.url %></a></h5> <br>
+          <h5><span>Heigh Quality:</span> <a target="_blank" href="<%= x.snippet.thumbnails.high.url %>"><%= x.snippet.thumbnails.high.url %></a></h5> <br>
+          <br>
+        </div>
+      </div>
+    <% }) %>
+
+    <div id="Pagination">
+      <div id="count">
+        <% for(var i = 0; i< pages; i++) {%>
+          <a href=<%= '/Data/'+i %>>
+              <%= i+1 %>
+          </a>
+        <% } %>
+      </div>
+    </div>
+
+
+  </div>
+ 
+</body>
+</html>
